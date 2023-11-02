@@ -1,0 +1,27 @@
+name: Lint & Typecheck
+on:
+  pull_request:
+    paths:
+      - apps/**
+      - packages/**
+jobs:
+  lint:
+    name: Lint & Typecheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
+      - name: Install
+        run: yarn install
+
+      - name: Lint
+        run: yarn lint

@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: 'yarn'
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: '/'
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: 'weekly'
+    ignore:
+      # Husky v5 is currently in early-access and not open source licensed (you'd have to pay for a commercial license)
+      - dependency-name: 'husky'
+        versions: ['5.x']

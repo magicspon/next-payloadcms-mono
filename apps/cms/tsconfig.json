@@ -1,0 +1,11 @@
+{
+	"extends": "tsconfig/base.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"paths": {
+			"payload/generated-types": ["./src/payload-types.ts"]
+		}
+	},
+	"include": ["**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules"]
+}

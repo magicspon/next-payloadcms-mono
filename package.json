@@ -1,21 +1,61 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "eslint": "^8.48.0",
-    "prettier": "^3.0.3",
-    "tsconfig": "*",
-    "turbo": "latest"
-  },
-  "name": "next-payload-mono",
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+	"name": "next-payload-mono",
+	"private": true,
+	"packageManager": "yarn@1.22.19",
+	"license": "MIT",
+	"author": {
+		"email": "hello@spon.io",
+		"name": "Dave Stockley",
+		"url": "https://spon.io"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com:magicspon/next-payload-mono.git"
+	},
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"prepare": "husky install",
+		"new:component": "hygen component with-prompt",
+		"new:page": "hygen page with-prompt",
+		"new:context": "hygen context with-prompt",
+		"new:hook": "hygen hook with-prompt",
+		"new:store": "hygen store with-prompt",
+		"up": "docker compose up -d",
+		"down": "docker compose down --volumes --remove-orphans",
+		"e2e": "npx playwright test --config='./packages/e2e'",
+		"e2e:ui": "NO_SERVER=true; npx playwright test --ui --config='./packages/e2e'"
+	},
+	"workspaces": [
+		"apps/*",
+		"packages/**/*"
+	],
+	"quokka": {
+		"babel": {
+			"env": "test",
+			"polyfill": false
+		},
+		"installPackageCommand": "yarn add {packageName}",
+		"env": {
+			"params": {
+				"env": "NODE_ENV=test"
+			}
+		}
+	},
+	"dependencies": {
+		"@commitlint/cli": "^18.2.0",
+		"@commitlint/config-conventional": "^18.1.0",
+		"@manypkg/cli": "^0.21.0",
+		"@total-typescript/ts-reset": "^0.5.1",
+		"commitlint": "^18.2.0",
+		"eslint": "^8.48.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.0.2",
+		"prettier": "^3.0.3",
+		"ts-node": "^10.9.1",
+		"tsconfig": "*",
+		"turbo": "latest"
+	}
 }
