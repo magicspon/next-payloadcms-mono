@@ -7,7 +7,14 @@ This is an official starter Turborepo.
 Run the following command:
 
 ```sh
-npx create-turbo@latest
+yarn install
+```
+
+rename the cms ``.env.example` to `.env`
+
+```sh
+docker compose up -d
+yarn dev
 ```
 
 ## What's inside?
@@ -16,11 +23,12 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
+- `cms`: a [payloadcms](https://payloadcms.com/) app
 - `web`: another [Next.js](https://nextjs.org/) app
 - `ui`: a stub React component library shared by both `web` and `docs` applications
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `tailwind-config`: `tailwindconfig.ts`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -38,7 +46,7 @@ To build all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm build
+yarn build
 ```
 
 ### Develop
@@ -47,7 +55,7 @@ To develop all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm dev
+yarn dev
 ```
 
 ### Remote Caching
