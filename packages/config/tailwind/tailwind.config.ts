@@ -16,23 +16,18 @@ import containerQueries from '@tailwindcss/container-queries'
 import animate from 'tailwindcss-animate'
 
 const config = {
-	content: [
-		'./src/**/*.{ts,tsx}',
-		'../../packages/ui/src/**/*.{ts,tsx}',
-		'../../packages/builder/src/**/*.{ts,tsx}',
-	],
+	content: ['./src/**/*.{ts,tsx}', '../../packages/ui/**/*.{ts,tsx}'],
 	darkMode: 'media',
 	theme: {
 		capsize: {
 			rootLineHeightUnitless: 1.2,
 			fontMetrics: {
 				sans: {
-					capHeight: 700,
-					ascent: 960,
-					descent: -240,
+					capHeight: 2048,
+					ascent: 2728,
+					descent: -680,
 					lineGap: 0,
-					unitsPerEm: 1000,
-					xHeight: 500,
+					unitsPerEm: 2816,
 				},
 			},
 			className: 'trim',
@@ -81,7 +76,7 @@ const config = {
 				'2xs': '16rem',
 			},
 			fontFamily: {
-				sans: ['var(--font-gilroy)', ...fontFamily.sans],
+				sans: ['var(--font-inter)', ...fontFamily.sans],
 			},
 			keyframes: {
 				expand: {

@@ -2,7 +2,7 @@ import express from 'express'
 import payload from 'payload'
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-require('dotenv').config()
+require('dotenv').config({ path: '.env' })
 
 const app = express()
 

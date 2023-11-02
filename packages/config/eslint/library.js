@@ -41,6 +41,9 @@ module.exports = {
 		'@typescript-eslint/no-non-null-assertion': rules.OFF,
 		'@typescript-eslint/explicit-function-return-type': rules.OFF,
 		'@typescript-eslint/no-var-requires': rules.OFF,
+		'@typescript-eslint/no-unsafe-assignment': rules.OFF,
+		'@typescript-eslint/restrict-template-expressions': rules.OFF,
 		'unicorn/filename-case': rules.OFF,
+		'react/jsx-sort-props': rules.OFF,
 	},
 }

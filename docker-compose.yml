@@ -1,25 +1,17 @@
 version: '3'
+
 services:
-  # Postgres
   postgres:
     image: postgres:latest
     ports:
       # Accessible from the host at port :35432
-      - '35433:5432'
+      - '35434:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: saas
     # Make sure log colors show up correctly
     tty: true
 
-  # Stripe Webhook CLI
-  # stripe:
-  #   image: stripe/stripe-cli:latest
-  #   command: listen --forward-to host.docker.internal:4000/api/stripe/webhooks --log-level warn
-  #   extra_hosts:
-  #     - "host.docker.internal:host-gateway"
-  #   environment:
-  #     STRIPE_API_KEY: ${STRIPE_SECRET_API_KEY}
-  #   # Make sure log colors show up correctly
-  #   tty: true
+volumes:
+  data:
+  node_modules:

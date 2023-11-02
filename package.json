@@ -13,8 +13,10 @@
 		"url": "ssh://git@github.com:magicspon/next-payload-mono.git"
 	},
 	"scripts": {
+		"clean": "rm -rf node_modules",
 		"build": "turbo run build",
 		"dev": "turbo run dev",
+		"storybook": "turbo run storybook",
 		"lint": "turbo run lint",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"prepare": "husky install",

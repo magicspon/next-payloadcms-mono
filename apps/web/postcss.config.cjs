@@ -1,1 +1,1 @@
-module.exports = require('@spx/tailwind-config/postcss')
+module.exports = require('tailwind-config/postcss')

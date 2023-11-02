@@ -47,5 +47,6 @@ module.exports = {
 		'@typescript-eslint/explicit-function-return-type': rules.OFF,
 		'@typescript-eslint/no-var-requires': rules.OFF,
 		'unicorn/filename-case': rules.OFF,
+		'react/jsx-sort-props': rules.OFF,
 	},
 }
