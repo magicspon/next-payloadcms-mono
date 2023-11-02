@@ -1,4 +1,4 @@
-# Turborepo starter
+# PayloadCMS / Nextjs / Monorepo
 
 This is an official starter Turborepo.
 
