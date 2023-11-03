@@ -1,4 +1,5 @@
-import { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'payload/types'
+// import type { User } from 'payload/generated-types'
 import { isAdmin, isAdminFieldLevel } from '../access/isAdmin'
 import { isAdminOrSelf } from '../access/isAdminOrSelf'
 
@@ -69,7 +70,8 @@ const Users: CollectionConfig = {
 				update: isAdminFieldLevel,
 			},
 			admin: {
-				condition: ({ roles }) => roles && !roles.includes('admin'),
+				// eslint-disable-next-line no-implicit-coercion
+				condition: ({ roles }) => !!roles && !roles.includes('admin'),
 				description:
 					'This field sets which sites that this user has access to.',
 			},

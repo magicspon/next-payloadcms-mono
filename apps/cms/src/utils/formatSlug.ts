@@ -19,5 +19,5 @@ export const formatSlug =
 			}
 		}
 
-		return value
+		return value as unknown
 	}

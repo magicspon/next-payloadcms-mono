@@ -1,4 +1,4 @@
-import { Payload } from 'payload'
+import type { Payload } from 'payload'
 
 export const seed = async (payload: Payload): Promise<void> => {
 	// Local API methods skip all access control by default

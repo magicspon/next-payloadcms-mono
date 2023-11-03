@@ -14,8 +14,6 @@ import Pages from './collections/Pages'
 import { seed } from './seed'
 import { Teams } from './collections/Teams'
 
-console.log(process.env.DATABASE_URI)
-
 export default buildConfig({
 	admin: {
 		user: Users.slug,

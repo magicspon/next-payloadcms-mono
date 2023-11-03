@@ -1,19 +1,11 @@
-/**
- * Simple object check.
- * @param item
- * @returns {boolean}
- */
 export function isObject(item: unknown): boolean {
+	// eslint-disable-next-line no-implicit-coercion
 	return !!item && typeof item === 'object' && !Array.isArray(item)
 }
 
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
 type InputParam = Record<string, any> | { [k: string]: any }
 
-/**
- * Deep merge two objects.
- * @param target
- * @param ...sources
- */
 export default function deepMerge<T extends InputParam, R extends InputParam>(
 	target: T,
 	source: R,

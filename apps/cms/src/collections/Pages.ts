@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'payload/types'
 import { RichText } from '../fields/RichText'
 import { slugField } from '../fields/slugField'
 import { populatePublishedDate } from '../utils/populatePublishedDate'

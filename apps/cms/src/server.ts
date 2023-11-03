@@ -1,8 +1,8 @@
+import path from 'path'
 import express from 'express'
 import payload from 'payload'
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-require('dotenv').config({ path: '.env' })
+require('dotenv').config({ path: path.join(__dirname, '../', '.env') })
 
 const app = express()
 
@@ -26,5 +26,4 @@ const start = async () => {
 	app.listen(3030)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
 start()
