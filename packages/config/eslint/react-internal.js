@@ -13,8 +13,8 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 
 module.exports = {
 	extends: [
-		'@vercel/style-guide/eslint/browser',
-		'@vercel/style-guide/eslint/react',
+		// '@vercel/style-guide/eslint/browser',
+		// '@vercel/style-guide/eslint/react',
 		'eslint-config-custom/library',
 	].map(require.resolve),
 	parserOptions: {

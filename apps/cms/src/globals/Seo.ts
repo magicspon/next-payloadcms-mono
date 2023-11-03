@@ -1,5 +1,4 @@
-import { GlobalConfig } from 'payload/types'
-import { RichText } from '../fields/RichText'
+import type { GlobalConfig } from 'payload/types'
 
 const Seo: GlobalConfig = {
 	slug: 'seo',

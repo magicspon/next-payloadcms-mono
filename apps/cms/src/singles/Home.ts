@@ -1,4 +1,4 @@
-import { GlobalConfig } from 'payload/types'
+import type { GlobalConfig } from 'payload/types'
 import { RichText } from '../fields/RichText'
 
 const Home: GlobalConfig = {
