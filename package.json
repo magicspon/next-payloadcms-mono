@@ -52,7 +52,7 @@
 		"@manypkg/cli": "^0.21.0",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"commitlint": "^18.2.0",
-		"eslint": "^8.48.0",
+		"eslint": "^8.53.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^15.0.2",
 		"prettier": "^3.0.3",

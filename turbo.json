@@ -21,5 +21,11 @@
 			"persistent": true
 		}
 	},
-	"globalEnv": ["PAYLOAD_SECRET", "DATABASE_URI", "PAYLOAD_SEED"]
+	"globalEnv": [
+		"CI",
+		"PAYLOAD_SECRET",
+		"DATABASE_URI",
+		"PAYLOAD_SEED",
+		"VERCEL_ENV"
+	]
 }

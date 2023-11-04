@@ -1,5 +1,10 @@
 const { resolve } = require('node:path')
 const project = resolve(process.cwd(), 'tsconfig.json')
+const rules = {
+	ON: 2,
+	OFF: 0,
+	WARN: 1,
+}
 
 /*
  * This is a custom ESLint configuration for use with
@@ -25,6 +30,9 @@ module.exports = {
 		JSX: true,
 	},
 	settings: {
+		next: {
+			rootDir: 'apps/web/',
+		},
 		'import/resolver': {
 			typescript: {
 				project,
@@ -32,4 +40,7 @@ module.exports = {
 		},
 	},
 	ignorePatterns: ['node_modules/', 'dist/', '.eslintrc.js'],
+	rules: {
+		'no-html-link-for-pages': rules.OFF,
+	},
 }

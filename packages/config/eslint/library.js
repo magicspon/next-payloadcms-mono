@@ -27,6 +27,9 @@ module.exports = {
 		JSX: true,
 	},
 	settings: {
+		next: {
+			rootDir: 'apps/web/',
+		},
 		'import/resolver': {
 			typescript: {
 				project,
@@ -51,5 +54,6 @@ module.exports = {
 		'react/jsx-sort-props': rules.OFF,
 		'unicorn/filename-case': rules.OFF,
 		'no-undef': rules.OFF,
+		'no-html-link-for-pages': rules.OFF,
 	},
 }
