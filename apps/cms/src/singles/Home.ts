@@ -1,11 +1,18 @@
 import type { GlobalConfig } from 'payload/types'
 import { RichText } from '../fields/RichText'
+import { createPreviewUrl } from '../utils/previewUrl'
 
 const Home: GlobalConfig = {
 	slug: 'home',
 	admin: {
 		group: 'Company',
+
+		livePreview: {
+			url: () => createPreviewUrl('/'),
+		},
 	},
+
+	access: { read: () => true },
 
 	fields: [
 		{

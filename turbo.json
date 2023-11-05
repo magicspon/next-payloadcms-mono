@@ -1,6 +1,6 @@
 {
 	"$schema": "https://turbo.build/schema.json",
-	"globalDependencies": ["**/.env.*local"],
+	"globalDependencies": ["**/.env.*local", "**/.env"],
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
@@ -23,9 +23,12 @@
 	},
 	"globalEnv": [
 		"CI",
-		"PAYLOAD_SECRET",
 		"DATABASE_URI",
+		"PAYLOAD_API_URL",
+		"PAYLOAD_PREVIEW_TOKEN",
+		"PAYLOAD_SECRET",
 		"PAYLOAD_SEED",
+		"SITE_URL",
 		"VERCEL_ENV"
 	]
 }
