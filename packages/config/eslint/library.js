@@ -1,41 +1,59 @@
+const { resolve } = require('node:path')
 const rules = {
 	ON: 2,
 	OFF: 0,
 	WARN: 1,
 }
+const project = resolve(process.cwd(), 'tsconfig.json')
+
+/*
+ * This is a custom ESLint configuration for use with
+ * typescript packages.
+ *
+ * This config extends the Vercel Engineering Style Guide.
+ * For more information, see https://github.com/vercel/style-guide
+ *
+ */
 
 module.exports = {
+	extends: ['@vercel/style-guide/eslint/typescript', 'eslint-config-turbo'].map(
+		require.resolve,
+	),
+	parserOptions: {
+		project,
+	},
+	globals: {
+		React: true,
+		JSX: true,
+	},
 	settings: {
-		react: {
-			version: 'detect',
+		next: {
+			rootDir: 'apps/web/',
+		},
+		'import/resolver': {
+			typescript: {
+				project,
+			},
 		},
 	},
-
-	parserOptions: {
-		// project: './tsconfig.json',
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-	},
-	env: {
-		node: true,
-		es6: true,
-	},
-	parser: '@typescript-eslint/parser',
-	extends: [
-		'eslint:recommended',
-		'plugin:react/recommended',
-		'plugin:react-hooks/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:import/typescript',
-		'turbo',
-		'prettier',
-	],
+	ignorePatterns: ['node_modules/', 'dist/'],
 	rules: {
-		'@typescript-eslint/no-unused-vars': rules.WARN,
-		'@typescript-eslint/no-empty-interface': rules.OFF,
-		'@typescript-eslint/no-explicit-any': rules.OFF,
+		'eslint-comments/require-description': rules.OFF,
 		'@typescript-eslint/no-non-null-assertion': rules.OFF,
-		'react/react-in-jsx-scope': rules.OFF,
-		'react/prop-types': rules.OFF,
+		'@typescript-eslint/explicit-function-return-type': rules.OFF,
+		'@typescript-eslint/no-var-requires': rules.OFF,
+		'@typescript-eslint/no-unsafe-assignment': rules.OFF,
+		'@typescript-eslint/no-unsafe-member-access': rules.OFF,
+		'@typescript-eslint/restrict-template-expressions': rules.OFF,
+		'@typescript-eslint/no-unsafe-call': rules.OFF,
+		'@typescript-eslint/no-explicit-any': rules.OFF,
+		'@typescript-eslint/no-floating-promises': rules.OFF,
+		'import/no-default-export': rules.OFF,
+		'import/no-extraneous-dependencies': rules.OFF,
+		'import/no-named-as-default': rules.OFF,
+		'react/jsx-sort-props': rules.OFF,
+		'unicorn/filename-case': rules.OFF,
+		'no-undef': rules.OFF,
+		'no-html-link-for-pages': rules.OFF,
 	},
 }
