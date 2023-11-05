@@ -14,7 +14,8 @@
 	},
 	"scripts": {
 		"clean": "rm -rf node_modules",
-		"build": "turbo run build",
+		"build": "turbo run build --filter=!./apps/cms",
+		"build:payload": "turbo run build --filter=./apps/cms",
 		"dev": "turbo run dev",
 		"storybook": "turbo run storybook",
 		"lint": "turbo run lint",
@@ -54,6 +55,7 @@
 		"commitlint": "^18.2.0",
 		"eslint": "^8.53.0",
 		"husky": "^8.0.3",
+		"hygen": "^6.2.11",
 		"lint-staged": "^15.0.2",
 		"prettier": "^3.0.3",
 		"ts-node": "^10.9.1",
