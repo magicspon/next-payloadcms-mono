@@ -14,7 +14,8 @@
 	},
 	"scripts": {
 		"clean": "rm -rf node_modules",
-		"build": "turbo run build",
+		"build": "turbo run build --filter=!./apps/cms",
+		"build:payload": "turbo run build --filter=./apps/cms",
 		"dev": "turbo run dev",
 		"storybook": "turbo run storybook",
 		"lint": "turbo run lint",
