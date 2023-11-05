@@ -1,10 +1,9 @@
 import path from 'path'
-// import nestedDocs from '@payloadcms/plugin-nested-docs'
-// import seo from '@payloadcms/plugin-seo'
+import nestedDocs from '@payloadcms/plugin-nested-docs'
+import seo from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
-// import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 import Users from './collections/Users'
 import Home from './singles/Home'
@@ -29,31 +28,30 @@ export default buildConfig({
 	// 	schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
 	// },
 
-	// plugins: [
-	// 	nestedDocs({
-	// 		collections: ['pages'],
-	// 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// 		// @ts-expect-error this is fine
-	// 		generateLabel: (_, doc) => doc?.title ?? '',
-	// 		generateURL: (docs) =>
-	// 			docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
-	// 	}),
-	// 	seo({
-	// 		globals: ['about', 'seo'],
-	// 		collections: ['pages'],
-	// 		generateTitle: ({ doc }) => `Hello | ${doc?.title?.value}`,
-	// 		generateDescription: ({ doc }) => {
-	// 			// @ts-ignore this is fine
-	// 			return doc?.excerpt?.value ?? ''
-	// 		},
-	// 		generateURL: ({ doc }) => {
-	// 			// const d = doc
+	plugins: [
+		nestedDocs({
+			collections: ['pages'],
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-expect-error this is fine
+			generateLabel: (_, doc) => doc.title ?? '',
+			generateURL: (docs) =>
+				docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
+		}),
+		seo({
+			globals: ['about', 'seo'],
+			collections: ['pages'],
+			// generateTitle: ({ doc }) => `Hello | ${doc?.title?.value}`,
+			// generateDescription: ({ doc }) => {
+			// 	return doc?.excerpt?.value ?? ''
+			// },
+			// generateURL: ({ doc }) => {
+			// 	// const d = doc
 
-	// 			return ''
-	// 		},
-	// 		tabbedUI: false,
-	// 	}),
-	// ],
+			// 	return ''
+			// },
+			tabbedUI: false,
+		}),
+	],
 	db: postgresAdapter({
 		pool: {
 			connectionString: process.env.DATABASE_URI,
