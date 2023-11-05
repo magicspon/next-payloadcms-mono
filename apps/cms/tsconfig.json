@@ -7,7 +7,7 @@
 		}
 	},
 	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "dist", "build"],
 	"ts-node": {
 		"transpileOnly": true,
 		"swc": true
