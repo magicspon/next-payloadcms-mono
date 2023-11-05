@@ -48,6 +48,7 @@ module.exports = {
 		'@typescript-eslint/no-unsafe-call': rules.OFF,
 		'@typescript-eslint/no-explicit-any': rules.OFF,
 		'@typescript-eslint/no-floating-promises': rules.OFF,
+		'@typescript-eslint/consistent-type-definitions': rules.OFF,
 		'import/no-default-export': rules.OFF,
 		'import/no-extraneous-dependencies': rules.OFF,
 		'import/no-named-as-default': rules.OFF,
