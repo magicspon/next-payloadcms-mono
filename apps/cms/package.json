@@ -2,7 +2,7 @@
 	"name": "cms",
 	"description": "A blank template to get started with Payload",
 	"version": "1.0.0",
-	"main": "dist/server.js",
+	"main": "dist/index.js",
 	"license": "MIT",
 	"scripts": {
 		"lint": "eslint \"api/**/*.ts*\" --fix",
@@ -11,7 +11,7 @@
 		"build:payload": "cross-env PAYLOAD_CONFIG_PATH=api/payload.config.ts payload build",
 		"build:server": "tsc",
 		"build": "yarn copyfiles && yarn build:payload && yarn build:server",
-		"start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
+		"start": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/index.js",
 		"copyfiles": "copyfiles -u 1 \"api/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
 		"generate:types": "cross-env PAYLOAD_CONFIG_PATH=api/payload.config.ts payload generate:types",
 		"generate:graphQLSchema": "cross-env PAYLOAD_CONFIG_PATH=api/payload.config.ts payload generate:graphQLSchema",
